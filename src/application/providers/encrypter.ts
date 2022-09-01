@@ -1,3 +1,3 @@
 export interface Encrypter {
-  encrypt(plainText: string): string
+  encrypt(plainText: string): Promise<string>
 }

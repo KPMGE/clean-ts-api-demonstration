@@ -4,7 +4,7 @@ export class EncrypterMock implements Encrypter {
   input = ""
   output = "encrypter output"
 
-  encrypt(plainText: string): string {
+  async encrypt(plainText: string): Promise<string> {
     this.input = plainText
     return this.output
   }

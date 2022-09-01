@@ -14,7 +14,7 @@ export class AddStudentService implements AddStudentUseCase {
   async add(student: AddStudentUseCase.Props): Promise<AddStudentUseCase.Result> {
     if (student.age < 18) throw new StudentMinorError()
 
-    const encryptedPassword = this.encrypter.encrypt(student.password)
+    const encryptedPassword = await this.encrypter.encrypt(student.password)
 
     const newStudent: Student = {
       ...student,
